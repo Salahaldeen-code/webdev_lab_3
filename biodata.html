@@ -1,0 +1,273 @@
+<html>
+
+<head>
+
+    <title>Lab 2</title>
+    <style>
+        table {
+            width: 55%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid #000000;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #fdfdfd;
+        }
+
+        th.salah {
+            padding-right: 50px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            /* padding-right: 1100px; */
+            margin-right: 1px;
+            width: 300px;
+            height: 150px;
+        }
+
+        /* Add this CSS to style your header */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            opacity: 0.5;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ed563b;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ff9900;
+        }
+
+        /* Media query for responsive navigation */
+        @media (max-width: 768px) {
+            .navbar-toggle {
+                display: block;
+                cursor: pointer;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                background-color: #333;
+                width: 100%;
+                text-align: center;
+                top: 60px;
+                left: 0;
+                z-index: 1;
+            }
+
+            .nav-menu.active {
+                display: block;
+            }
+
+            .nav-item {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Salah<em> aldeen</em></a>
+            <div class="navbar-toggle">&#9776;</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Biodata.html">Biodata</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Hobbies.html">Hobbies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Campus_Life.html">Campus Life</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <h1> MY Bio Data </h1>
+
+    <table>
+        <tr>
+            <th class="salah">Name</th>
+            <td>SALAH AL-DEEN TAHA QASIM AL WRAFI </td>
+            <th><img class="img" src="salah.png" width="300" high="100" alt="Profile picture"></th>
+        </tr>
+
+        <tr>
+            <th>Date of birth</th>
+            <td colspan="2">19 May 2002</td>
+        </tr>
+
+        <tr>
+            <th>Religion</th>
+            <td colspan="2">Islam</td>
+        </tr>
+
+        <tr>
+            <th>Race</th>
+            <td colspan="2">Arab</td>
+        </tr>
+
+        <tr>
+            <th rowspan="5">Address</th>
+        </tr>
+
+        <tr>
+            <th>Street</th>
+            <td>Taman universiti </td>
+        </tr>
+
+        <tr>
+            <th>Town</th>
+            <td>Parit Raja</td>
+        </tr>
+
+        <tr>
+            <th>District</th>
+            <td>Batu Pahat</td>
+        </tr>
+
+        <tr>
+            <th>State</th>
+            <td>Johor</td>
+        </tr>
+
+        <tr>
+            <th rowspan="4">Contact</th>
+        </tr>
+
+        <tr>
+            <th>Mobile Phone</th>
+            <td>01137688812</td>
+        </tr>
+
+        <tr>
+            <th>Social Media</th>
+            <td>
+                <ul>
+
+                    <li><a href="https://www.linkedin.com/in/salah-aldeen-alwrafi-17b67123b/"
+                            target="_blank">Linkedin</a></li>
+
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <th>website</th>
+            <td> N/A </td>
+        </tr>
+
+        <tr>
+            <th>Course / Institution
+            </th>
+            <td colspan="2">BIS / UTHM</td>
+        </tr>
+
+
+        <tr>
+            <th>Programming skills</th>
+            <td colspan="2">
+                1. web development <br>
+                2. c programming <br>
+                3. java programming <br>
+                4. python language programming <br>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Personal Interest</th>
+            <td colspan="2">Fotsal</td>
+        </tr>
+
+        <tr>
+            <th>Plan in 2024</th>
+            <td colspan="2">
+                1.Finishing my degreee<br>
+                2.Having Cisco Certifaction and others relted to security file<br>
+                3.Imporving my programming skills
+                4.Getting my first job<br>
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

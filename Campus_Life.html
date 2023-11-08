@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Campus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Header Styles */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            opacity: 0.5;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ed563b;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ff9900;
+        }
+
+        /* Media query for responsive navigation */
+        @media (max-width: 768px) {
+            .navbar-toggle {
+                display: block;
+                cursor: pointer;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                background-color: #333;
+                width: 100%;
+                text-align: center;
+                top: 60px;
+                left: 0;
+                z-index: 1;
+            }
+
+            .nav-menu.active {
+                display: block;
+            }
+
+            .nav-item {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Main Banner Styles */
+        #bg-video {
+            min-width: 100%;
+            min-height: 100vh;
+            max-width: 100%;
+            max-height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #bg-video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        .caption {
+            text-align: center;
+            position: absolute;
+            width: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .caption h6 {
+            margin-top: 0px;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #ed563b;
+            letter-spacing: 0.5px;
+        }
+
+        .caption h2 {
+            margin-top: 30px;
+            margin-bottom: 25px;
+            font-size: 84px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #f5f2f2;
+            letter-spacing: 1px;
+        }
+
+        .main-banner .caption h2 em {
+            font-style: normal;
+            color: #ed563b;
+            font-weight: 900;
+
+        }
+
+
+        .caption2 {
+            text-align: center;
+            position: absolute;
+            width: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .caption2 h6 {
+            margin-top: 0px;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #ed563b;
+            letter-spacing: 0.5px;
+        }
+
+        .caption2 h2 {
+            margin-top: 30px;
+            margin-bottom: 25px;
+            font-size: 84px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #f5f2f2;
+            letter-spacing: 1px;
+        }
+
+        .main-banner .caption2 h2 em {
+            font-style: normal;
+            color: #ed563b;
+            font-weight: 900;
+
+        }
+
+        /* New Section Styles */
+        div.gallery {
+            border: 1px solid #ccc;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 24.99999%;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .responsive {
+                width: 49.99999%;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .responsive {
+                width: 100%;
+            }
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .section {
+            background-color: #ececec;
+            border-radius: 20px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 25px;
+            font-size: 84px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #ed563b;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        h2 em {
+            font-style: normal;
+            color: #000000;
+            font-weight: 900;
+        }
+
+        .btweensections {
+            padding: 30px;
+        }
+
+        .SecPar {
+            background-color: #fff;
+            padding: 0px;
+            margin: 0px;
+            border: 7px solid #ececec;
+            border-radius: 50px;
+        }
+
+        img {
+            transition: transform 0.5s;
+            /* Increase the transition duration to 0.5 seconds */
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            /* Increase the size by 10% */
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Salah<em> aldeen</em></a>
+            <div class="navbar-toggle">&#9776;</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Biodata.html">Biodata</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Hobbies.html">Hobbies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Campus_Life.html">Campus Life</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="fsktm/fsktm .mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h2>My <em>Campus Life</em></h2>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>FSKTM <em>LIFE MEMORIZE</em></h2>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="fsktm/img1.jpg">
+                    <img src="fsktm/img1.jpg" alt="Cinque Terre" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="fsktm/img2.JPG">
+                    <img src="fsktm/img2.JPG" alt="Forest" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="fsktm/img3.jpg">
+                    <img src="fsktm/img3.jpg" alt="Northern Lights" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="fsktm/img4.jpg">
+                    <img src="fsktm/img4.jpg" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="fsktm/img5.jpg">
+                    <img src="fsktm/img5.jpg" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="fsktm/img6.jpg">
+                    <img src="fsktm/img6.jpg" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="fsktm/img7.JPG">
+                    <img src="fsktm/img7.JPG" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="fsktm/img8.JPG">
+                    <img src="fsktm/img8.JPG" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="SecPar" style="padding: 20px;">
+            <p style="font-size: 18px; margin-bottom: 10px;">As a student at the university,
+                life in the faculty is an exciting and dynamic experience.
+                Each day is filled with opportunities for learning, growth, and connection.
+                The faculty is not just a place for acquiring knowledge but also a hub of intellectual exploration
+                and personal development. I attend lectures, engage in thought-provoking discussions,
+                collaborate on projects with fellow students, and seek guidance from knowledgeable professors.
+                The campus is a bustling center of activity, with libraries, labs, and communal spaces that foster
+                a sense of camaraderie among students. Life in the faculty is a unique journey,
+                where I'm constantly challenged to expand my horizons, think critically, and pave the way for my future.
+            </p>
+        </div>
+    </div>
+
+    <!-- Rest of your HTML content here -->
+    <div class="btweensections">
+        <h2>Ctf <em>Compition </em></h2>
+
+    </div>
+    <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="ctf/ctf.mp4" type="video/mp4" />
+        </video>
+
+    </div>
+    </div>
+
+    <div class="section">
+        <h2>Ctf <em>LIFE MEMORIZE</em></h2>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="ctf/img1.JPG">
+                    <img src="ctf/img1.JPG" alt="Cinque Terre" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="ctf/img2.jpg">
+                    <img src="ctf/img2.jpg" alt="Forest" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="ctf/img3.jpg">
+                    <img src="ctf/img3.jpg" alt="Northern Lights" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="ctf/img4.JPG">
+                    <img src="ctf/img4.JPG" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div style="padding: 20px;">
+            <p style="font-size: 18px; margin-bottom: 10px;">Me as a student enrolled in the CTF (Capture The Flag)
+                competition at KLCC, life in this thrilling event is an exhilarating adventure. It's a
+                world of cybersecurity challenges,
+                teamwork, and problem-solving. Days are filled with intense hacking, code-breaking, and strategizing
+                with my fellow participants. The competition venue buzzes with excitement as we unravel complex puzzles
+                and face off against various security scenarios. The competition fosters a spirit of camaraderie and
+                competition, pushing us to continually enhance our cybersecurity skills. KLCC, with its vibrant
+                atmosphere
+                and cutting-edge technology, provides the perfect backdrop for this intellectually stimulating
+                experience.
+                CTF life is an exciting journey where I'm not only learning cybersecurity skills but also forging
+                lasting connections with like-minded enthusiasts in the field.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Rest of your HTML content here -->
+    <div class="btweensections">
+        <div class="video-overlay header-text new-caption">
+            <h2>culture <em>Event</em></h2>
+        </div>
+    </div>
+
+    <div class="main-banner new-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="culture/yemen1.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="section">
+        <h2>culture <em>Day</em></h2>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="culture/img1.jpg">
+                    <img src="culture/img1.jpg" alt="Cinque Terre" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="culture/img1.jpg">
+                    <img src="culture/img1.jpg" alt="Forest" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="culture/img1.jpg">
+                    <img src="culture/img1.jpg" alt="Northern Lights" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="culture/img1.jpg">
+                    <img src="culture/img1.jpg" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="culture/img5.jpg">
+                    <img src="culture/img5.jpg" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="culture/img6.jpg">
+                    <img src="culture/img6.jpg" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="culture/img7.jpg">
+                    <img src="culture/img7.jpg" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="culture/img8.jpg">
+                    <img src="culture/img8.jpg" alt="Mountains" width="600" height="400">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="clearfix"></div>
+
+        <div class="SecPar" style="padding: 20px;">
+            <p style="font-size: 18px; margin-bottom: 10px;"> Culture Day event, where I proudly represent Yemeni
+                culture, life during this time is a colorful celebration of tradition, diversity, and heritage. I find
+                myself immersed in the vibrant world of Yemen's rich customs, music, and cuisine. It's an opportunity to
+                share the beauty of our culture with fellow students and visitors. The event is a joyful mosaic of
+                cultural exchange, where I get to learn about other cultures as well. Culture Day fosters a sense of
+                unity and understanding, bringing people from different backgrounds together. It's a chance to showcase
+                the uniqueness of Yemen and to appreciate the global tapestry of traditions that enrich our world.</p>
+        </div>
+    </div>
+</body>
+
+</html>
